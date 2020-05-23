@@ -21,6 +21,7 @@ export class AppComponent {
   }
 
   async changeLanguage(lan:string){
+    debugger
     lan =lan||  await localStorage.getItem('currentLanguage') || this.translate.getBrowserCultureLang()||"zh-CN";
     this.translate.setDefaultLang(lan);
     this.translate.use(lan);

@@ -9,7 +9,11 @@ export class LayoutComponent implements OnInit {
   constructor() { }
 
   async ngOnInit(): Promise<void> {
-
+    debugger
   }
+  ngAfterContentInit(){
+    debugger
+  }
+
 
 }
