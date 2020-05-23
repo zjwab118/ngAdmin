@@ -3,9 +3,32 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngAdmin1": {
+    "ngAdmin": {
       "projectType": "application",
-      "schematics": {},
+      "schematics":{
+        "@schematics/angular:component": {
+          "styleext": "scss",
+          "spec": false
+        },
+        "@schematics/angular:class": {
+          "spec": false
+        },
+        "@schematics/angular:directive": {
+          "spec": false
+        },
+        "@schematics/angular:guard": {
+          "spec": false
+        },
+        "@schematics/angular:module": {
+          "spec": false
+        },
+        "@schematics/angular:pipe": {
+          "spec": false
+        },
+        "@schematics/angular:service": {
+          "spec": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +36,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngAdmin1",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,8 +46,8 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.css"
+            "styles": [          
+              "./src/styles.css"
             ],
             "scripts": []
           },
@@ -56,24 +79,52 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "uat": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.uat.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngAdmin1:build"
+            "browserTarget": "ngAdmin:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngAdmin1:build:production"
+              "browserTarget": "ngAdmin:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngAdmin1:build"
+            "browserTarget": "ngAdmin:build"
           }
         },
         "test": {
@@ -114,14 +165,14 @@
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngAdmin1:serve:production"
+              "devServerTarget": "ngAdmin:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "ngAdmin1",
+  "defaultProject": "ngAdmin",
   "cli": {
     "analytics": "87d2ec12-220f-496f-8472-2df83c15ee8f"
   }

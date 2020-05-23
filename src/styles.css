@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import './assets/global/plugins/simple-line-icons/simple-line-icons.min.css';
+@import './assets/global/plugins/font-awesome/css/font-awesome.min.css';
+@import './assets/global/plugins/uniform/css/uniform.default.css';
+@import './assets/global/css/components.min.css';
+body{
+    background-color: #364150!important;;
+}

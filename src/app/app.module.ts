@@ -1,18 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
+import {ErrorComponent as Error404 } from './view/error/404/error/error.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Error404,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    CoreModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
