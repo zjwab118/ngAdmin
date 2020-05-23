@@ -12,6 +12,7 @@ import { registerLocaleData } from '@angular/common';
 //import { AppStoreModule } from '../store';
 //registerLocaleData(zh);
 
+
 @NgModule({
   declarations: [],
   imports: [
@@ -19,7 +20,7 @@ import { registerLocaleData } from '@angular/common';
     HttpClientModule,
     BrowserAnimationsModule,
     ShareModule,
-    AppRoutingModule,
+    AppRoutingModule  
   ],
   exports: [
     ShareModule,
