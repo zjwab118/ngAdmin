@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ErrorComponent as Error404 } from './view/error/404/error/error.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -14,7 +15,9 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     scrollPositionRestoration: 'enabled'
-  })],
-  exports: [RouterModule]
+  }),
+  ],
+  exports: [RouterModule,
+  ]
 })
 export class AppRoutingModule { }

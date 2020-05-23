@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { TranslateService } from '@ngx-translate/core';
+import { codeJson } from './utils/base64';
+import { AnyJson } from './vo/common.type';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,8 @@ export class AppComponent {
   async ngOnInit(){
     console.log(environment)
     this.changeLanguage('zh-CN');
-   
+    var json:AnyJson={"name":"zjwab"}
+  console.log(codeJson(json))
   }
 
   async changeLanguage(lan:string){

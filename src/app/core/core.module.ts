@@ -1,18 +1,14 @@
 import { NgModule, SkipSelf, Optional } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { ServicesModule } from '../services/services.module';
 //import { PagesModule } from '../pages/pages.module';
 import { ShareModule } from '../share/share.module';
-import { registerLocaleData } from '@angular/common';
-//import zh from '@angular/common/locales/zh';
-//import { NZ_I18N, zh_CN } from 'ng-zorro-antd';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 //import { AppStoreModule } from '../store';
-//registerLocaleData(zh);
-
-
 @NgModule({
   declarations: [],
   imports: [
@@ -20,13 +16,18 @@ import { registerLocaleData } from '@angular/common';
     HttpClientModule,
     BrowserAnimationsModule,
     ShareModule,
-    AppRoutingModule  
+    AppRoutingModule,
+    TranslateModule.forRoot({
+      loader: {
+      provide: TranslateLoader,
+      useFactory: (HttpLoaderFactory),
+      deps: [HttpClient]
+      }}),
   ],
   exports: [
     ShareModule,
     AppRoutingModule
   ],
- // providers: [{ provide: NZ_I18N, useValue: zh_CN }],
 })
 export class CoreModule {
   constructor(@SkipSelf() @Optional() parentModule: CoreModule) {
@@ -35,3 +36,7 @@ export class CoreModule {
     }
   }
 }
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http,'./assets/i18n/', '.json');
+ }

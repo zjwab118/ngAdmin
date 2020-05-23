@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 //import { WyUiModule } from './wy-ui/wy-ui.module';
 //import { ImgDefaultDirective } from './directives/img-default.directive';
 
@@ -8,17 +9,15 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
-  //  NgZorroAntdModule,
     FormsModule,
-   // WyUiModule
-
+    // WyUiModule
+    TranslateModule
   ],
   exports: [
     CommonModule,
-   // NgZorroAntdModule,
     FormsModule,
-  //  WyUiModule
-  //TranslateModule
+    TranslateModule
+    //  WyUiModule
   ]
 })
 export class ShareModule { }

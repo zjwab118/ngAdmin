@@ -8,8 +8,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor( public translate : TranslateService) { 
-    this.translate.setDefaultLang( this.translate.getBrowserCultureLang());
+  constructor( private translate : TranslateService) { 
+   // this.translate.setDefaultLang("en-US");
   }
 
    ngOnInit():void {
